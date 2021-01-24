@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Font Awesome CSS -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <title>Hello, world!</title>
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="controller.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<!-- ======= Mobile nav toggle button ======= -->
+<button type="button" class="mobile-nav-toggle d-xl-none">
+  <i class="fas fa-align-justify"></i>
+</button>
+
+<!-- ======= Header ======= -->
+
+
+<header id="header">
+  <div class="d-flex flex-column">
+    <div class="profile">
+      <img src="assets/img/the-godfather.svg" alt="">
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li ng-repeat="x in employees" ng-class="{active: $index == selected}" ng-click="select($index)">
+          <a href="#"><i class="bx bx-user"></i> <span>{{x.name}}</span></a>
+        </li>
+      </ul>
+    </nav><!-- .nav-menu -->
+    <button type="button" class="mobile-nav-toggle d-xl-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header><!-- End Header -->
+<main id="main">
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about align-self-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2">
+          <img src="assets/profile-pics/{{selectedProfile.image}}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content">
+          <div class="row">
+            <div class="col-12 text-white">
+              <h3>{{selectedProfile.name}}</h3>
+            </div>
+
+            <div class="col-lg-12 pt-4 pt-lg-0 content text-white">
+              <div class="row">
+                <div class="col-2">
+                  <label for="customRange1" class="form-label">Popularity</label>
+                </div>
+                <div class="col-10">
+                  <input type="range" class="form-range" id="customRange1" min="0" max="{{selectedProfile.popularity}}">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-12  pt-lg-0 content text-white bg-dark p-4 ml-3">
+              <h2 class="mt-3">Biography</h2>
+              <p class="text-white bg-dark">
+                <span>{{selectedProfile.biography}}</span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    </div>
+  </section><!-- End About Section -->
+</main><!-- End #main -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="assets/js/menu.js"></script>
+</body>
+</html>
