@@ -10,7 +10,7 @@ Basic displayling  dynamic data.
 
 <!-- GETTING STARTED -->
 ## Getting Started
-Download repo run uing index.html file 
+Download repo run uing index.html file or open index file in browser 
 
 
 
